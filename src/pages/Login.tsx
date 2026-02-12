@@ -3,12 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { useApp } from "@/contexts/AppContext";
 import { Phone, Mail, UserCircle, Shield, ArrowLeft } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { translations } from "@/data/translations";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { setIsGuest } = useApp();
+  const { setIsGuest, language } = useApp();
   const [loginMethod, setLoginMethod] = useState<"phone" | "email">("phone");
   const [inputValue, setInputValue] = useState("");
+
+  const t = translations[language].login;
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +32,7 @@ const Login = () => {
         className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors mb-6 self-start"
       >
         <ArrowLeft className="w-4 h-4" />
-        <span className="text-sm">Back</span>
+        <span className="text-sm">{t.back}</span>
       </button>
 
       <div className="flex-1 flex flex-col items-center justify-center w-full max-w-sm mx-auto animate-slide-up">
@@ -38,8 +41,8 @@ const Login = () => {
           <img src={logo} alt="YojanaSathi" className="w-12 h-12 object-contain" />
         </div>
 
-        <h2 className="text-2xl font-bold text-foreground mb-1">Welcome Back</h2>
-        <p className="text-sm text-muted-foreground mb-8">Sign in to find your schemes</p>
+        <h2 className="text-2xl font-bold text-foreground mb-1">{t.welcomeBack}</h2>
+        <p className="text-sm text-muted-foreground mb-8">{t.signIn}</p>
 
         {/* Login Form */}
         <div className="w-full bg-card rounded-xl shadow-card p-6 mb-4">
@@ -51,7 +54,7 @@ const Login = () => {
                 ${loginMethod === "phone" ? "bg-card shadow-sm text-foreground" : "text-muted-foreground"}`}
             >
               <Phone className="w-4 h-4" />
-              Mobile
+              {t.mobile}
             </button>
             <button
               onClick={() => setLoginMethod("email")}
@@ -59,14 +62,14 @@ const Login = () => {
                 ${loginMethod === "email" ? "bg-card shadow-sm text-foreground" : "text-muted-foreground"}`}
             >
               <Mail className="w-4 h-4" />
-              Email
+              {t.email}
             </button>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-foreground mb-1.5">
-                {loginMethod === "phone" ? "Mobile Number" : "Email Address"}
+                {loginMethod === "phone" ? t.mobileNumber : t.emailAddress}
               </label>
               <div className="relative">
                 {loginMethod === "phone" && (
@@ -78,7 +81,7 @@ const Login = () => {
                   type={loginMethod === "phone" ? "tel" : "email"}
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
-                  placeholder={loginMethod === "phone" ? "Enter mobile number" : "Enter email address"}
+                  placeholder={loginMethod === "phone" ? t.enterMobile : t.enterEmail}
                   className={`w-full bg-background border border-input rounded-lg py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all
                     ${loginMethod === "phone" ? "pl-12 pr-4" : "px-4"}`}
                 />
@@ -89,7 +92,7 @@ const Login = () => {
               type="submit"
               className="w-full gradient-saffron text-primary-foreground font-semibold py-3.5 rounded-lg hover:opacity-90 active:scale-[0.98] transition-all text-sm"
             >
-              Continue →
+              {t.continue} →
             </button>
           </form>
         </div>
@@ -97,7 +100,7 @@ const Login = () => {
         {/* Divider */}
         <div className="flex items-center gap-3 w-full my-2">
           <div className="flex-1 h-px bg-border" />
-          <span className="text-xs text-muted-foreground">or</span>
+          <span className="text-xs text-muted-foreground">{t.or}</span>
           <div className="flex-1 h-px bg-border" />
         </div>
 
@@ -107,14 +110,14 @@ const Login = () => {
           className="w-full flex items-center justify-center gap-2 bg-card border-2 border-border py-3.5 rounded-xl hover:border-secondary hover:bg-green-light transition-all text-sm font-medium text-foreground mt-2"
         >
           <UserCircle className="w-5 h-5 text-secondary" />
-          Continue as Guest
+          {t.guest}
         </button>
 
         {/* Privacy Note */}
         <div className="flex items-center gap-2 mt-8 px-4 py-3 rounded-lg bg-green-light">
           <Shield className="w-4 h-4 text-secondary flex-shrink-0" />
           <p className="text-xs text-foreground">
-            No documents required. Your data stays private.
+            {t.privacy}
           </p>
         </div>
       </div>
