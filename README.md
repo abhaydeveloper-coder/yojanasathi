@@ -1,73 +1,263 @@
-# Welcome to your Lovable project
+# Yojana Sathi – AI-Powered Government Scheme Assistant
 
-## Project info
+Yojana Sathi is an AI-powered civic assistant designed to help citizens easily discover, understand, and apply for government schemes they are eligible for. It simplifies access to public welfare programs using AI, personalization, and conversational interaction.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 📌 Problem Statement
 
-There are several ways of editing your application.
+Millions of citizens are unaware of government schemes they qualify for due to:
 
-**Use Lovable**
+* Lack of awareness
+* Complex eligibility criteria
+* Language barriers
+* Difficult government portals
+* No centralized personalized platform
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+**Yojana Sathi solves this by providing an intelligent assistant that recommends schemes based on user profile and answers questions in simple language.**
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🎯 Objectives
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+* Provide personalized government scheme recommendations
+* Simplify scheme eligibility checking
+* Offer conversational AI support
+* Improve accessibility with multilingual support
+* Increase awareness and utilization of government benefits
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🚀 Key Features
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 1. AI Chatbot Interface
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+* Conversational assistant similar to ChatGPT
+* Answers scheme-related questions
+* Guides users step-by-step
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 2. Personalized Scheme Recommendations
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+* Recommends schemes based on:
+
+  * Age
+  * State
+  * Occupation
+  * Income
+  * Category (Student, Farmer, etc.)
+
+### 3. Eligibility Matching Engine
+
+* Rule-based eligibility checking
+* Shows:
+
+  * Eligible schemes
+  * Partially eligible schemes
+  * Not eligible schemes with reason
+
+### 4. Multilingual Support
+
+* Supports multiple Indian languages
+* Improves accessibility for rural users
+
+### 5. User Profile Management
+
+* Easy onboarding
+* Saves user preferences
+* Provides personalized experience
+
+### 6. Scheme Information Dashboard
+
+* Scheme details
+* Benefits
+* Eligibility criteria
+* Application process
+* Official links
+
+---
+
+## 🏗️ System Architecture
+
+```
+Frontend (React / Web UI)
+        ↓
+Backend (Node.js / Python)
+        ↓
+AI Engine (Gemini API / OpenAI API)
+        ↓
+Eligibility Engine (Rule-based logic)
+        ↓
+Database (MongoDB / Firebase)
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🛠️ Tech Stack
 
-**Use GitHub Codespaces**
+### Frontend
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+* HTML, CSS, JavaScript
+* React.js (recommended)
+* Tailwind CSS
 
-## What technologies are used for this project?
+### Backend
 
-This project is built with:
+* Node.js / Express.js
+  or
+* Python / FastAPI
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Database
 
-## How can I deploy this project?
+* MongoDB / Firebase
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### AI Integration
 
-## Can I connect a custom domain to my Lovable project?
+* Gemini API or OpenAI API
 
-Yes, you can!
+### Deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+* Vercel / Netlify (Frontend)
+* Render / Railway (Backend)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## 📂 Project Structure
+
+```
+yojana-sathi/
+│
+├── frontend/
+│   ├── components/
+│   ├── pages/
+│   ├── styles/
+│   └── App.js
+│
+├── backend/
+│   ├── routes/
+│   ├── controllers/
+│   ├── models/
+│   └── server.js
+│
+├── database/
+│   └── schemes.json
+│
+├── README.md
+└── package.json
+```
+
+---
+
+## ⚙️ Installation and Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/yojana-sathi.git
+cd yojana-sathi
+```
+
+### 2. Install dependencies
+
+Frontend:
+
+```bash
+cd frontend
+npm install
+```
+
+Backend:
+
+```bash
+cd backend
+npm install
+```
+
+### 3. Run the project
+
+Frontend:
+
+```bash
+npm start
+```
+
+Backend:
+
+```bash
+node server.js
+```
+
+---
+
+## 💡 Example Usage
+
+User enters:
+
+```
+Age: 19
+State: Rajasthan
+Occupation: Student
+```
+
+Yojana Sathi will recommend:
+
+* PM Scholarship Scheme
+* Skill Development Schemes
+* Student Support Schemes
+
+---
+
+## 🌍 Target Users
+
+* Students
+* Farmers
+* Job seekers
+* Low income families
+* Rural citizens
+* General public
+
+---
+
+## 📈 Future Enhancements
+
+* Mobile App version
+* Voice assistant support
+* Direct application integration
+* Aadhaar based personalization
+* Real-time scheme updates
+
+---
+
+## 🤝 Contribution
+
+Contributions are welcome.
+
+Steps:
+
+1. Fork the repository
+2. Create a new branch
+3. Make changes
+4. Submit pull request
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Abhay Pratap Singh**
+Developer of Yojana Sathi
+AI for Communities & Public Impact Project
+
+---
+
+## ⭐ Conclusion
+
+Yojana Sathi aims to bridge the gap between citizens and government welfare schemes using AI, making access simple, personalized, and inclusive.
+
+---
+
+**"Empowering citizens through intelligent access to government schemes."**
